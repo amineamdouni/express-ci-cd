@@ -2,14 +2,14 @@ pipeline {
     agent any
     
     stages {
-        // stage('make errors') {
-        //     steps {
-        //         script {
-        //             sh 'hhh'
+        stage('make errors') {
+            steps {
+                script {
+                    sh 'hhh'
                   
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
         stage('Prepare Scripts') {
             steps {
                 script {
