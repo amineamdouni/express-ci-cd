@@ -1,0 +1,16 @@
+---
+- name: Update EC2 Instances
+  hosts: tag_KubernetesCluster_kubevpro_unikodetn_com
+  become: yes
+  tasks:
+    - name: Update all packages (Debian/Ubuntu)
+      apt:
+        update_cache: yes
+        upgrade: dist
+      when: ansible_os_family == "Debian"
+
+    - name: Update all packages (RedHat/CentOS)
+      yum:
+        name: '*'
+        state: latest
+      when: ansible_os_family == "RedHat"
